@@ -1,4 +1,3 @@
-# Documentation example
+# Work in progress...
 
-We use this example in the lesson
-[How to document your research software](https://coderefinery.github.io/documentation/).
+We would like to present a few simple concepts that have proven useful in practice using a Power BI report with surf spots in Portugal
