@@ -1,0 +1,15 @@
+dimension;language;dimension_label;orig_term_data;translation
+region;en;Region;Norte;North
+region;de;Region;Norte;Norden
+region;en;Region;Centro;Center
+region;en;Region;Centro;Zentrum
+region;de;Region;Oeste e Vale do Tejo;East and Vallay of Tejo
+region;en;Region;Oeste e Vale do Tejo;Osten und Tal des Tejo
+region;en;Region;Área Metropolitana de Lisboa;Metropolitan Region of Lisbon
+region;de;Region;Área Metropolitana de Lisboa;Metropolregion Lissabon
+district;de;Distrikt;Lisboa;Lissabon
+district;en;District;Lisboa;Lisbon
+website;de;Webseite;Não;Nein
+website;en;Website;Não;No
+website;de;Webseite;Sim;Ja
+website;en;Website;Sim;Yes

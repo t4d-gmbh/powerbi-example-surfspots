@@ -1,0 +1,7 @@
+name;language;label;description
+number_of_spots;en;Number of surf spots;
+number_of_spots;de;Anzahl surf spots;
+number_of_spots;pt;Número de surf spots;
+number_of_spots_avg_per_district;en;Average number of surf spots per district;
+number_of_spots_avg_per_district;de;Durchschnittliche Anzahl Surfspots pro Distrikt;
+number_of_spots_avg_per_district;pt;Número médio de spots de surf por distrito;

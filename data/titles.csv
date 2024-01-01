@@ -1,0 +1,10 @@
+type;language;name;title;description
+page;de;mainpage;Surf spots in Portugal;
+page;en;mainpage;Surf spots in Portugal;
+page;pt;mainpage;Pincipais spots de surf;
+visual;en;select_kpi;Choose the indicator;
+visual;de;select_kpi;Wähle die Kennzahl;
+visual;pt;select_kpi;Selecionar um Indice;
+visual;en;website;Choose a spot on the map to see if a link is available;
+visual;de;website;Wähle einen Punkt auf der Karte, um zu sehen, ob ein Link verfügbar ist;
+visual;pt;website;Selecionar um ponto no mapa para ver se existe uma ligaçao;
