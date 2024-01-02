@@ -9,16 +9,32 @@
 [^sn1]: [Data Analysis Expressions (learn.microsoft.com)](https://learn.microsoft.com/en-us/dax)
 
 
+## Visuals
+
+A data visualization like bar, column pie or line charts and many more.[^sn2]
+Matrices, tables and slicers (filter options within the report page) are also considered as "visuals".
+
+
+[^sn2]: [Visualization types in Power BI](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-types-for-reports-and-q-and-a)
+
+
+
+
 ## Measures
 
-A measure is usually a set of Data Analysis Expressions which calculates a scalar value like a key performance index (KPI). 
-A measure is dynamically recalculated each time when the filter context changes (e.g. if a user changes the filter options).
+A measure is usually a set of Data Analysis Expressions to calculate a scalar value like a key performance index (KPI). 
+A measure is dynamically **recalculated** each time when the filter context changes (for example, if a user changes the filter options).
 
-A complicated measure may require a lot of resources (memory).
-The calculation will work in Power BI Desktop if the machine on which Power BI Desktop is installed has enough resources (e.g. 16GB or 32GB RAM). 
+```{note}
+A complicated measure may require a lot of resources (CPU and memory).
+The calculation works if the machine on which Power BI Desktop is installed has enough resources. 
 However, if the report is published on *Power BI Service*, 
-the measure might lead to a **visual has exceeded available resources** error because the memory on Power BI Service is limited.
+the measure might lead to a **visual has exceeded available resources** error because the resources on *Power BI Service* are limited.[^sn3]
 Keep that in mind, when preparing a report for publication.
+```
+
+
+[^sn3]: [Capacities and SKUs](https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-what-is#capacities-and-skus)
 
 
 A measure can be added to any table and technically it does not matter to which table it is attached. 
@@ -35,8 +51,8 @@ This table can be used to create structured documentation for the users.
 In Power BI all measures are attached to this table.
 
 
-It is now possible to let the user select (in a slicer) which measure is used for a visual.
-For this we create the following measure:
+Instead of creating a visual for each measure, we can let the user select (in a slicer) a measure for a visual.
+For this we create the following additional measure:
 
 
     __selected_kpi = SWITCH(
@@ -70,7 +86,7 @@ The label of the measure can also be used as a title of the visual to clarify wh
 
 A calculated column, like a measure, is a set of Data Analysis Expressions that calculate a scalar value or a text. 
 Unlike a measure, a calculated column is permanently assigned to a table and is only recalculated when the entire data set is refreshed. 
-Expressions that depend on a specific filter context can **not** be used in a calculated column. 
+Expressions that depend on a specific filter context **cannot** be used in a calculated column. 
 It is also possible to calculate an entire table.
 
 

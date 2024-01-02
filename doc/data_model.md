@@ -73,9 +73,17 @@ If no translation is available, the original language from the data is used (Por
 ```{note}
 These data transformations can also be done in *Microsoft Power Query*[^sn2] which is a separate software. 
 As already mentioned, in this tutorial we focus on Power BI Desktop.
+
+The idea of this table is to allow users to select a dimension for a visual (for example, the categories on the y-axis in a bar chart). 
+This functionality can also be implemented with *Field parameters*.[^sn3]
+See also the note at the end of this page.
 ```
 
+
 [^sn2]: [Unpivot columns (Power Query)](https://support.microsoft.com/en-au/office/unpivot-columns-power-query-0f7bad4b-9ea1-49c1-9d95-f588221c7098)
+
+
+[^sn3]: [Let report readers use field parameters to change visuals (learn.microsoft.com)](https://learn.microsoft.com/en-us/power-bi/create-reports/power-bi-field-parameters)
 
 
 
@@ -100,17 +108,17 @@ The translation is optional. If no translation is available for a term, the Port
 ```{note}
 
 The translation of data values can also be achieved with the *Field parameters* feature, which was introduced by Microsoft in 2022. 
-A detailed and helpful description can be found in the article *Implement data translation using field parameters*.[^sn3]
+A detailed and helpful description can be found in the article *Implement data translation using field parameters*.[^sn4]
  
 The approach we use here has the advantage that new languages and translations can be added dynamically 
 without changing the structure of the data model.
 
-However, depending on the situation, the use of *Field parameters* may be the better solution. 
-In our experience, *Field parameters* offer better performance, which becomes relevant with larger data models (e.g. several hundred megabytes).
+However, depending on the use case, the use of *Field parameters* may be the better solution. 
+In our experience, *Field parameters* offer better performance, which becomes relevant with larger data models (several hundred megabytes).
 
 ```
 
-[^sn3]: [Implement data translation using field parameters](https://learn.microsoft.com/en-us/power-bi/guidance/data-translation-implement-field)
+[^sn4]: [Implement data translation using field parameters](https://learn.microsoft.com/en-us/power-bi/guidance/data-translation-implement-field)
 
 
 
