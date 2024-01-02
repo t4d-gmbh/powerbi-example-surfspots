@@ -6,10 +6,10 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Power BI Example with surf spots in Portugal'
+project = 'Power BI example with surf spots in Portugal'
 copyright = '2023, T4D GmbH'
 author = 'Christian M. Müller'
-release = '0.1'
+release = '1.0'
 
 
 # -- General configuration ---------------------------------------------------
