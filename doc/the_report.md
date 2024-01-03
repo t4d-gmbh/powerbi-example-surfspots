@@ -48,3 +48,17 @@ These terms may be translated with the *Translation builder*.[^sn2]
 
 [^sn2]: [Create multiple-language reports with Translations Builder (learn.microsoft.com)](https://learn.microsoft.com/en-us/power-bi/guidance/translation-builder)
 
+
+## Final remark
+
+Now, if you are interested, feel free to download the file *powerbi-example-surfspots.pbix*.[^sn3]
+You can customize it according to your use case and add your data.
+The CSV files are imported directly from the GitHub repository. 
+You can change these paths to load your own version of the files.
+In case you want to load the files from the local file system, you have to change the command *Web.Contents* to *File.Contents*.
+
+
+[^sn3]: [powerbi-example-surfspots.pbix](https://github.com/t4d-gmbh/powerbi-example-surfspots/raw/main/powerbi-example-surfspots.pbix)
+
+
+![Transform data](figures/powerbi-transform-data-path.png)
