@@ -3,7 +3,7 @@
 
 ## Overview
 
-The data model has seven tables. The tables *titles* and *measures* are already discussed in the chapter *Key concepts*. 
+The data model has seven tables. The tables *titles* and *measure* are already discussed in the chapter **Key concepts**. 
 The table *languages* contains a list of the three languages *English* (en), *Deutsch* (de) and *Português* (pt) from which the user
 can choose the preferred language. The small arrows along the lines indicate that *titles*, *measure* and *dimension* and *dimension_filter* (including translations)
 are filtered to the selected language. 
@@ -70,9 +70,9 @@ If translations are not yet available for each measure or title, use one of the 
 
 ### dimension
 
-This is calculated table. It unpivots the columns *OBJECTID*, *LimitePROT* (region), *Distrito* and *Website_available* of
+This is a calculated table. It unpivots the columns *OBJECTID*, *LimitePROT* (region), *Distrito* and *Website_available* of
 the table *principais_spots_de_surf* to the columns *OBJECTID*, *dimension* and *label*. 
-For each language in the table *languages* a row per OBJECTID and dimension is created. 
+For each language in the table *languages* a row per *OBJECTID* and *dimension* is created. 
 If a translation is available in the table *translations*, it is used for the *label* and the *dimension_label*. 
 If no translation is available, the original language from the data is used (Portuguese).
 

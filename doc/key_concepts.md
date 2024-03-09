@@ -1,22 +1,26 @@
 # Key concepts
 
+Here we introduce a few specific key concepts of Power BI. 
+To get a better overview see the article *Basic concepts for designers in the Power BI service*[^sn1]
+
+
+
+[^sn1]: [Basic concepts for designers in the Power BI service (learn.microsoft.com)](https://learn.microsoft.com/en-us/power-bi/fundamentals/service-basic-concepts)
 
 ## Data Analysis Expressions (DAX)
 
-*Data Analysis Expressions*[^sn1] are the programming language of Power BI. They are mainly used to create *measures* and *calculated columns*. 
+*Data Analysis Expressions*[^sn2] are the programming language of Power BI. They are mainly used to create *measures* and *calculated columns*. 
 
 
-[^sn1]: [Data Analysis Expressions (learn.microsoft.com)](https://learn.microsoft.com/en-us/dax)
+[^sn2]: [Data Analysis Expressions (learn.microsoft.com)](https://learn.microsoft.com/en-us/dax)
 
 
 ## Visuals
 
-A data visualization like bar, column pie or line charts and many more.[^sn2]
+A data visualization like bar, column pie or line charts and many more.[^sn3]
 Matrices, tables and slicers (filter options within the report page) are also considered as "visuals".
 
-
-[^sn2]: [Visualization types in Power BI](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-types-for-reports-and-q-and-a)
-
+[^sn3]: [Visualization types in Power BI](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-types-for-reports-and-q-and-a)
 
 
 
@@ -29,12 +33,12 @@ A measure is dynamically **recalculated** each time when the filter context chan
 A complicated measure may require a lot of resources (CPU and memory).
 The calculation works if the machine on which Power BI Desktop is installed has enough resources. 
 However, if the report is published on *Power BI Service*, 
-the measure might lead to a **visual has exceeded available resources** error because the resources on *Power BI Service* are limited.[^sn3]
+the measure might lead to a **visual has exceeded available resources** error because the resources on *Power BI Service* are limited.[^sn4]
 Keep that in mind, when preparing a report for publication.
 ```
 
 
-[^sn3]: [Capacities and SKUs](https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-what-is#capacities-and-skus)
+[^sn4]: [Capacities and SKUs](https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-what-is#capacities-and-skus)
 
 
 A measure can be added to any table and technically it does not matter to which table it is attached. 
@@ -52,7 +56,7 @@ In Power BI all measures are attached to this table.
 
 
 Instead of creating a visual for each measure, we can let the user select (in a slicer) a measure for a visual.
-For this we create the following additional measure:
+For this we create the following additional measure (DAX) and attach it to the table *measure*:
 
 
     __selected_kpi = SWITCH(
@@ -101,6 +105,7 @@ It is not necessary to change and republish the whole report.
 ![Table *titles*](figures/table-titles.png)
 
 
-Use column *title* and define in *Filters on this visual* which title (name) is used for the visual.
+Click on the visual in the report, go to *Format visual* > *General* > *Title* and select the column *title* from the table *titles* (see figure below).
+Finally define in *Filters on this visual* which title ( column *name*) to use for the visual.
 
 ![Set visual title](figures/visual-set-title.png)
