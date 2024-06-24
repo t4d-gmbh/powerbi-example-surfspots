@@ -18,6 +18,7 @@ then
 else
 
   # Stath local changes on pbir files
+  git stash clear
   git stash push pbir/
   
   # Execute all python scripts in the scripts/folder
@@ -28,7 +29,7 @@ else
   done
 
   # Check if some files were changed
-  if git status | grep -q "nothing to commit"
+  if git status pbir/ | grep -q "nothing to commit"
   then
     git stash apply
 	echo >&2 "Seems that noting was changed"
