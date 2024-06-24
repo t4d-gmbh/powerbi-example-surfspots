@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
   "name": "39f8b70f5d7293a43b06",
   "position": {
-    "x": 927.10112359550556,
+    "x": 927.1011235955056,
     "y": 215.19101123595505,
     "z": 4000,
     "width": 336.5393258426966,
@@ -389,7 +389,8 @@
             }
           ]
         },
-        "howCreated": "User"
+        "howCreated": "User",
+        "isHiddenInViewMode": true
       }
     ],
     "filterSortOrder": "Custom"
