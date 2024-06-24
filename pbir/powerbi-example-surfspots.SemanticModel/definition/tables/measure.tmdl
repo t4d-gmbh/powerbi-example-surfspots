@@ -1,0 +1,128 @@
+table measure
+	lineageTag: bf57e9f6-9804-42e9-b307-abc03424b9ef
+
+	measure __selected_kpi =
+			SWITCH(
+			    TRUE(),
+			    SELECTEDVALUE('measure'[name]) = "number_of_spots",                  [_number_of_spots],
+			    SELECTEDVALUE('measure'[name]) = "number_of_spots_avg_per_district", [_number_of_spots_avg_per_district],
+			    BLANK()
+			)
+		lineageTag: efdb63d2-6f07-4ce8-89e8-45ea29dabd1f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure _title_userhint =
+			IF(
+			    ISBLANK(SELECTEDVALUE('measure'[name])), MIN('titles'[title]),
+			    MIN('measure'[label])
+			)
+		lineageTag: 62829d25-296d-42f7-aa5a-1ce07d44baff
+
+	measure _bubble_size = ```
+			IF(
+			    NOT ISBLANK(SELECTEDVALUE('dimension'[label])) &&
+			    COUNT('dimension_filter'[OBJECTID]) == [_number_of_filtered_dimensions], 
+			    1, 
+			    BLANK()
+			)
+			```
+		formatString: 0
+		lineageTag: 86305a13-9bd4-49fa-8955-56ae5d19a560
+
+	measure _number_of_filtered_dimensions =
+			CALCULATE(
+			    DISTINCTCOUNT('dimension_filter'[dimension]),
+			    CROSSFILTER('principais_spots_de_surf'[OBJECTID], 'dimension_filter'[OBJECTID], None)
+			)
+		formatString: 0
+		lineageTag: c5d52088-eefb-4f76-a897-b1367bac62b4
+
+	measure _website =
+			IF(
+			    NOT ISBLANK(SELECTEDVALUE('principais_spots_de_surf'[Website])),
+			    MIN('principais_spots_de_surf'[Website]),
+			    MIN('titles'[title]
+			))
+		lineageTag: 7334a40f-ceb9-4a6c-987c-442a4a5b2d32
+		dataCategory: WebUrl
+
+		changedProperty = IsHidden
+
+	measure _number_of_spots = ```
+			
+			
+			Var object_ids = VALUES('dimension'[OBJECTID])
+			
+			RETURN CALCULATE(
+			    COUNT('principais_spots_de_surf'[OBJECTID]),
+			    'principais_spots_de_surf'[OBJECTID] IN object_ids 
+			)
+			```
+		formatString: 0
+		lineageTag: ec1a2b5d-7e46-4b00-a824-9b1e0910918c
+
+	measure _number_of_spots_avg_per_district = ```
+			
+			
+			Var object_ids = VALUES('dimension'[OBJECTID])
+			
+			RETURN CALCULATE(
+			    DIVIDE(
+			        COUNT('principais_spots_de_surf'[OBJECTID]),
+			        DISTINCTCOUNT('principais_spots_de_surf'[Distrito])
+			    ),
+			    'principais_spots_de_surf'[OBJECTID] IN object_ids 
+			)
+			```
+		lineageTag: ec2d5617-7a8c-4e77-937b-664413975c30
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column name
+		dataType: string
+		lineageTag: 1293ec7a-debf-4b8f-a239-16cccf38d83c
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column language
+		dataType: string
+		lineageTag: 4c5f7e80-69b5-4bff-b67d-318ca2edcf67
+		summarizeBy: none
+		sourceColumn: language
+
+		annotation SummarizationSetBy = Automatic
+
+	column label
+		dataType: string
+		lineageTag: 857cbd20-ee59-47d4-8ae2-5cf05bc46af4
+		summarizeBy: none
+		sourceColumn: label
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 80568b0d-0350-4266-bd9f-c04ad9f8dfdb
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition measure = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/t4d-gmbh/powerbi-example-surfspots/main/data/measures.csv"),[Delimiter=";", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"name", type text}, {"language", type text}, {"label", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,60 @@
+table dimension_filter
+	lineageTag: e83c4056-158e-4556-9a0c-60a49087a10e
+
+	column OBJECTID
+		dataType: int64
+		formatString: 0
+		lineageTag: e5a8cd7b-f33b-4f12-853c-0f36bb382b26
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: dimension[OBJECTID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column language
+		dataType: string
+		lineageTag: 30d515f9-fa98-4dd4-8687-eec83dbb5a73
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: dimension[language]
+
+		annotation SummarizationSetBy = Automatic
+
+	column dimension
+		dataType: string
+		lineageTag: de3afdfe-f887-4f37-ab53-55c9d12ecae4
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: dimension[dimension]
+
+		annotation SummarizationSetBy = Automatic
+
+	column label
+		dataType: string
+		lineageTag: f4210ab8-d0c9-4bd6-81c5-7ba3d3ac06a3
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: dimension[label]
+
+		annotation SummarizationSetBy = Automatic
+
+	column dimension_label
+		dataType: string
+		lineageTag: fdfd30a6-9a9c-48de-b104-f12e5c30d42a
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: dimension[dimension_label]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimension_filter = calculated
+		mode: import
+		source = ALL('dimension')
+
+	annotation PBI_Id = 2f4cd07d33e24fefaaf042792e17d493
+

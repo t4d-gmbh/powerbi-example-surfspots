@@ -1,0 +1,25 @@
+relationship e6bc67c3-a31c-446b-a4b4-9c530e5f224b
+	fromColumn: measure.language
+	toColumn: languages.code
+
+relationship 35863a12-052a-43fd-888d-28b632fbdd05
+	fromColumn: titles.language
+	toColumn: languages.code
+
+relationship cc0bb44d-8e84-4252-95e6-a0989005a15c
+	fromColumn: dimension.OBJECTID
+	toColumn: principais_spots_de_surf.OBJECTID
+
+relationship 86b86906-6e33-478c-b601-36d8148cc15a
+	fromColumn: dimension.language
+	toColumn: languages.code
+
+relationship 7b084aef-712d-4f47-a7af-9a883a631834
+	crossFilteringBehavior: bothDirections
+	fromColumn: dimension_filter.OBJECTID
+	toColumn: principais_spots_de_surf.OBJECTID
+
+relationship 5f59f663-477f-4a3f-8ea8-8f13653c5438
+	fromColumn: dimension_filter.language
+	toColumn: languages.code
+

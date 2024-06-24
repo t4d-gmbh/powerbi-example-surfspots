@@ -1,0 +1,338 @@
+table principais_spots_de_surf
+	lineageTag: 46f09995-9f01-48a4-a1c1-141ae5d90c32
+
+	column X
+		dataType: double
+		lineageTag: 2756ec43-d43c-4c0a-81c7-81ea45215468
+		summarizeBy: sum
+		sourceColumn: X
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Y
+		dataType: double
+		lineageTag: dd6399ae-e29f-4e65-b30c-8ec32e53a820
+		summarizeBy: sum
+		sourceColumn: Y
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OBJECTID
+		dataType: int64
+		formatString: 0
+		lineageTag: 85818019-9aff-40d2-9d53-0d12d28875bc
+		summarizeBy: none
+		sourceColumn: OBJECTID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Denominacao
+		dataType: string
+		lineageTag: 96ece81e-6fb8-4ebf-86ef-ff0fa671f578
+		summarizeBy: none
+		sourceColumn: Denominacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column Campeonatos
+		dataType: string
+		lineageTag: fef973a1-72cb-4b30-afba-4fa2ccaef348
+		summarizeBy: none
+		sourceColumn: Campeonatos
+
+		annotation SummarizationSetBy = Automatic
+
+	column Website
+		dataType: string
+		lineageTag: a7c57ebe-b4f9-44e1-b977-2fb6762b5940
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: Website
+
+		annotation SummarizationSetBy = Automatic
+
+	column Localidade
+		dataType: string
+		lineageTag: 95d6faa6-d84d-41ca-b93f-83e400cc30f7
+		summarizeBy: none
+		sourceColumn: Localidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column LatLong
+		dataType: string
+		lineageTag: 2395adc2-b333-43dc-a2ad-3db4fb397923
+		summarizeBy: none
+		sourceColumn: LatLong
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiabilidadeGeo
+		dataType: string
+		lineageTag: f76a1d26-90e6-49a4-a316-61746a22d9f6
+		summarizeBy: none
+		sourceColumn: FiabilidadeGeo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Freguesia
+		dataType: string
+		lineageTag: 5bc2d8be-7640-4d8d-8f0d-4f754b86120a
+		summarizeBy: none
+		sourceColumn: Freguesia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Concelho
+		dataType: string
+		lineageTag: f13a5ba8-7ef3-4e6a-8794-4a4e38592809
+		summarizeBy: none
+		sourceColumn: Concelho
+
+		annotation SummarizationSetBy = Automatic
+
+	column Distrito
+		dataType: string
+		lineageTag: 842552c8-6af5-42c7-83b6-1b5e38cd9754
+		summarizeBy: none
+		sourceColumn: Distrito
+
+		annotation SummarizationSetBy = Automatic
+
+	column NUTSIII
+		dataType: string
+		lineageTag: 88a674de-dc6a-4e04-9482-8106948f12ef
+		summarizeBy: none
+		sourceColumn: NUTSIII
+
+		annotation SummarizationSetBy = Automatic
+
+	column NUTSII
+		dataType: string
+		lineageTag: 7d238ba9-bdf2-448f-88cb-0e3e6815835a
+		summarizeBy: none
+		sourceColumn: NUTSII
+
+		annotation SummarizationSetBy = Automatic
+
+	column NUTSI
+		dataType: string
+		lineageTag: 5f5e82c2-53ca-47f9-babd-784220241521
+		summarizeBy: none
+		sourceColumn: NUTSI
+
+		annotation SummarizationSetBy = Automatic
+
+	column ERT
+		dataType: string
+		lineageTag: 7e9400bd-b6cd-4ea5-a84c-53795f33f0c7
+		summarizeBy: none
+		sourceColumn: ERT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PNCT
+		dataType: string
+		lineageTag: 146b401e-ffc9-4776-b048-1cb3a47cdce8
+		summarizeBy: none
+		sourceColumn: PNCT
+
+		annotation SummarizationSetBy = Automatic
+
+	column RNAP
+		dataType: string
+		lineageTag: b02ac039-91d9-437b-aec6-7af325ae0db9
+		summarizeBy: none
+		sourceColumn: RNAP
+
+		annotation SummarizationSetBy = Automatic
+
+	column RedeNatura2000Global
+		dataType: string
+		lineageTag: 1ef16896-9812-4b61-baba-d89eaec83b7c
+		summarizeBy: none
+		sourceColumn: RedeNatura2000Global
+
+		annotation SummarizationSetBy = Automatic
+
+	column RedeNatura2000Sitios
+		dataType: string
+		lineageTag: e1f7d7c4-6f16-4a52-9fb9-473a8eb3ee51
+		summarizeBy: none
+		sourceColumn: RedeNatura2000Sitios
+
+		annotation SummarizationSetBy = Automatic
+
+	column RedeNatura2000ZPE
+		dataType: string
+		lineageTag: b8e4d7f3-93f2-4aff-9f2c-d86fd6b44df6
+		summarizeBy: none
+		sourceColumn: RedeNatura2000ZPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FaixaCosteira
+		dataType: string
+		lineageTag: 5aa8f3ec-355e-4378-9338-8ba4726415cc
+		summarizeBy: none
+		sourceColumn: FaixaCosteira
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZonaCosteira
+		dataType: string
+		lineageTag: 48aaf10c-0bfb-43a4-8e98-8c7b4e4890d9
+		summarizeBy: none
+		sourceColumn: ZonaCosteira
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZonaTerrestreProtecao
+		dataType: string
+		lineageTag: f6320772-cb6d-43bf-9c52-b716f0a27768
+		summarizeBy: none
+		sourceColumn: ZonaTerrestreProtecao
+
+		annotation SummarizationSetBy = Automatic
+
+	column LimitePROT
+		dataType: string
+		lineageTag: edfbb0ff-769e-46c2-b4da-1139078694e4
+		summarizeBy: none
+		sourceColumn: LimitePROT
+
+		annotation SummarizationSetBy = Automatic
+
+	column LimitePOC
+		dataType: string
+		lineageTag: b3ea0076-688f-4b8c-ab96-a1e2708e0f59
+		summarizeBy: none
+		sourceColumn: LimitePOC
+
+		annotation SummarizationSetBy = Automatic
+
+	column LimiteAlbufeiras
+		dataType: string
+		lineageTag: a58688a5-53f9-47a3-b17f-75566a566425
+		summarizeBy: none
+		sourceColumn: LimiteAlbufeiras
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNESCO
+		dataType: string
+		lineageTag: 6833407f-fdb4-47a6-8e86-75c639314526
+		summarizeBy: none
+		sourceColumn: UNESCO
+
+		annotation SummarizationSetBy = Automatic
+
+	column Geoparques
+		dataType: string
+		lineageTag: 53d44cca-dc48-4c7e-a993-0356a80ae2b7
+		summarizeBy: none
+		sourceColumn: Geoparques
+
+		annotation SummarizationSetBy = Automatic
+
+	column Biosfera
+		dataType: string
+		lineageTag: 7e9f3775-e1b8-47d1-b555-dd117d63e610
+		summarizeBy: none
+		sourceColumn: Biosfera
+
+		annotation SummarizationSetBy = Automatic
+
+	column CodigoIdentificador
+		dataType: int64
+		formatString: 0
+		lineageTag: fa125ce0-1469-4f5c-83e9-52e961791124
+		summarizeBy: sum
+		sourceColumn: CodigoIdentificador
+
+		annotation SummarizationSetBy = Automatic
+
+	column RedeAldeias
+		dataType: string
+		lineageTag: 83f76be4-a340-4819-8501-12a1464c6609
+		summarizeBy: none
+		sourceColumn: RedeAldeias
+
+		annotation SummarizationSetBy = Automatic
+
+	column FreguesiasCosteiras
+		dataType: string
+		lineageTag: 7d529432-40b9-48bf-a497-4c040068ecc3
+		summarizeBy: none
+		sourceColumn: FreguesiasCosteiras
+
+		annotation SummarizationSetBy = Automatic
+
+	column EstacaoNautica
+		dataType: string
+		lineageTag: efb8ad17-3f92-43a0-a75d-4bfcc0374f28
+		summarizeBy: none
+		sourceColumn: EstacaoNautica
+
+		annotation SummarizationSetBy = Automatic
+
+	column NUTSIIICosteiras
+		dataType: string
+		lineageTag: f92e3185-9e10-4741-b0e4-a3be9c839f87
+		summarizeBy: none
+		sourceColumn: NUTSIIICosteiras
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lat = CONVERT(SUBSTITUTE(TRIM(MID([LatLong], 1, FIND(";", [LatLong])-1)), ",", "."), DOUBLE)
+		dataType: double
+		formatString: 0.000000
+		lineageTag: f1b108fa-e55c-4e3b-8d8c-a9c729eca364
+		dataCategory: Latitude
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column Long = CONVERT(SUBSTITUTE(TRIM(MID([LatLong], FIND(";", [LatLong])+1,10)), ",", "."), DOUBLE)
+		dataType: double
+		formatString: 0.000000
+		lineageTag: b95cf0af-6891-49a9-9d95-05ba69f3a86a
+		dataCategory: Longitude
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column Website_available = ```
+			IF(
+			    CONTAINSSTRING('principais_spots_de_surf'[Website], "http"), 
+			    "Sim", 
+			    "Não"
+			)
+			```
+		dataType: string
+		lineageTag: 276f146c-6970-4669-9150-90419bbdc545
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition principais_spots_de_surf = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/t4d-gmbh/powerbi-example-surfspots/main/data/principais_spots_de_surf.csv"),[Delimiter=",", Columns=35, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"X", type number}, {"Y", type number}, {"OBJECTID", Int64.Type}, {"Denominacao", type text}, {"Campeonatos", type text}, {"Website", type text}, {"Localidade", type text}, {"LatLong", type text}, {"FiabilidadeGeo", type text}, {"Freguesia", type text}, {"Concelho", type text}, {"Distrito", type text}, {"NUTSIII", type text}, {"NUTSII", type text}, {"NUTSI", type text}, {"ERT", type text}, {"PNCT", type text}, {"RNAP", type text}, {"RedeNatura2000Global", type text}, {"RedeNatura2000Sitios", type text}, {"RedeNatura2000ZPE", type text}, {"FaixaCosteira", type text}, {"ZonaCosteira", type text}, {"ZonaTerrestreProtecao", type text}, {"LimitePROT", type text}, {"LimitePOC", type text}, {"LimiteAlbufeiras", type text}, {"UNESCO", type text}, {"Geoparques", type text}, {"Biosfera", type text}, {"CodigoIdentificador", Int64.Type}, {"RedeAldeias", type text}, {"FreguesiasCosteiras", type text}, {"EstacaoNautica", type text}, {"NUTSIIICosteiras", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

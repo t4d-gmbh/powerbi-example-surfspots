@@ -1,0 +1,136 @@
+table dimension
+	lineageTag: 24e7e1dd-b490-45d8-8f87-604c28f53860
+
+	column OBJECTID
+		dataType: int64
+		formatString: 0
+		lineageTag: 03b411d7-232e-4b90-a30b-96978167eec0
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [OBJECTID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column language
+		dataType: string
+		lineageTag: 2e117467-8085-4a1c-a04b-44cc9fff3629
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [language]
+
+		annotation SummarizationSetBy = Automatic
+
+	column dimension
+		dataType: string
+		lineageTag: 3404c659-f998-476f-a0e3-dd23ff8f2006
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [dimension]
+
+		annotation SummarizationSetBy = Automatic
+
+	column label
+		dataType: string
+		lineageTag: a42aff7c-48cb-424d-bb4c-9ead0c2b09b3
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [label]
+
+		annotation SummarizationSetBy = Automatic
+
+	column dimension_label
+		dataType: string
+		lineageTag: 81549cfb-3a1e-44c1-a523-e62044e5c264
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [dimension_label]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimension = calculated
+		mode: import
+		source = ```
+				
+				
+				Var region = naturalleftouterjoin(
+				  selectcolumns(
+				    'principais_spots_de_surf', 
+				    "name", "name", 
+				    "OBJECTID", [OBJECTID], 
+				    "dimension", "region",
+				    "label", [LimitePROT]
+				  ),
+				  selectcolumns('languages', "name", "name", "language", [code])
+				)
+				
+				Var website = naturalleftouterjoin(
+				  selectcolumns(
+				    'principais_spots_de_surf', 
+				    "name", "name", 
+				    "OBJECTID", [OBJECTID], 
+				    "dimension", "district",
+				    "label", [Distrito]
+				  ),
+				  selectcolumns('languages', "name", "name", "language", [code])
+				)
+				
+				Var distrito = naturalleftouterjoin(
+				  selectcolumns(
+				    'principais_spots_de_surf', 
+				    "name", "name", 
+				    "OBJECTID", [OBJECTID], 
+				    "dimension", "website",
+				    "label", [Website_available]
+				  ),
+				  selectcolumns('languages', "name", "name", "language", [code])
+				)
+				
+				
+				Var base_table = UNION(region, distrito, website)
+				
+				
+				Var translation = SELECTCOLUMNS(
+				    base_table,
+				    "OBJECTID", [OBJECTID],
+				    "language", [language],
+				    "dimension", [dimension],
+				    "dimension_label", IF(
+				        NOT ISBLANK(CALCULATE(
+				        MAX('translations'[dimension_label]),
+				        'translations'[dimension] = EARLIER([dimension]),
+				        'translations'[language] = EARLIER([language])
+				      )),
+				      CALCULATE(
+				        MAX('translations'[dimension_label]),
+				        'translations'[dimension] = EARLIER([dimension]),
+				        'translations'[language] = EARLIER([language])
+				      ),
+				      [dimension]
+				    ),
+				    "label", IF(
+				        NOT ISBLANK(CALCULATE(
+				        MAX('translations'[translation]),
+				        'translations'[dimension] = EARLIER([dimension]),
+				        'translations'[language] = EARLIER([language]),
+				        'translations'[orig_term_data] = EARLIER([label])
+				      )),
+				      CALCULATE(
+				        MAX('translations'[translation]),
+				        'translations'[dimension] = EARLIER([dimension]),
+				        'translations'[language] = EARLIER([language]),
+				        'translations'[orig_term_data] = EARLIER([label])
+				      ),
+				      [label]
+				    )
+				)
+				
+				RETURN translation
+				```
+
+	annotation PBI_Id = 2ee9528889604a25a383226a98a2a70f
+

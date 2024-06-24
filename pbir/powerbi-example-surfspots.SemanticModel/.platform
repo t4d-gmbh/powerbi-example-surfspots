@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "powerbi-example-surfspots"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4faa0663-247a-48c9-89b9-40a675b39f56"
+  }
+}

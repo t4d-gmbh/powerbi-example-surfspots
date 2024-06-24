@@ -1,0 +1,29 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: de-CH
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["titles","principais_spots_de_surf","languages","measure","translations"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.130.930.0 (24.06)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table titles
+ref table DateTableTemplate_d91a3a89-c517-44a4-a2f6-31c29f54006d
+ref table principais_spots_de_surf
+ref table languages
+ref table measure
+ref table dimension_filter
+ref table dimension
+ref table translations
+
+ref role Language
+
+ref cultureInfo en-US
+

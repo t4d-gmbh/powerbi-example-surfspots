@@ -1,0 +1,34 @@
+table languages
+	lineageTag: 582f1aa1-657e-489c-a58b-7e98e0d603ff
+
+	column code
+		dataType: string
+		lineageTag: d04578dc-97ee-4e62-a830-521bbfd248f9
+		summarizeBy: none
+		sourceColumn: code
+
+		annotation SummarizationSetBy = Automatic
+
+	column language
+		dataType: string
+		lineageTag: 444b9ae4-b113-45eb-83c5-0d6a80103273
+		summarizeBy: none
+		sourceColumn: language
+
+		annotation SummarizationSetBy = Automatic
+
+	partition languages = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/t4d-gmbh/powerbi-example-surfspots/main/data/languages.csv"),[Delimiter=";", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"code", type text}, {"language", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

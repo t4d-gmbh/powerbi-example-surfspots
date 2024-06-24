@@ -1,0 +1,110 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 348.88888041178387,
+        "y": 244.4444529215495
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1219.4500870390491,
+            "y": 329.54959542410705
+          },
+          "nodeIndex": "titles",
+          "nodeLineageTag": "477797f8-d3b6-45a9-b27e-957eedd49d9c",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 978.0697977821269,
+            "y": 592.564761764616
+          },
+          "nodeIndex": "languages",
+          "nodeLineageTag": "582f1aa1-657e-489c-a58b-7e98e0d603ff",
+          "size": {
+            "height": 129.66666666666663,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1240.7407038651954,
+            "y": 662.97385161885688
+          },
+          "nodeIndex": "measure",
+          "nodeLineageTag": "bf57e9f6-9804-42e9-b307-abc03424b9ef",
+          "size": {
+            "height": 345.66666666666674,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 398.78831973390072,
+            "y": 273.85708138403049
+          },
+          "nodeIndex": "translations",
+          "nodeLineageTag": "89c0f0f0-71f4-462d-ac21-c714437ac56c",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 720.62165624614852,
+            "y": 366.52958767785782
+          },
+          "nodeIndex": "dimension",
+          "size": {
+            "height": 225,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 667.90242185175873,
+            "y": 709.13511084639322
+          },
+          "nodeIndex": "dimension_filter",
+          "size": {
+            "height": 216.66666666666652,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 348.09523809523813,
+            "y": 499.00523795509207
+          },
+          "nodeIndex": "principais_spots_de_surf",
+          "size": {
+            "height": 440,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 60,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

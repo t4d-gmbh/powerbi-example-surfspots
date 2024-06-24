@@ -1,0 +1,58 @@
+table translations
+	lineageTag: 89c0f0f0-71f4-462d-ac21-c714437ac56c
+
+	column dimension
+		dataType: string
+		lineageTag: 6a75028a-cab7-4236-877a-5a5876685aaf
+		summarizeBy: none
+		sourceColumn: dimension
+
+		annotation SummarizationSetBy = Automatic
+
+	column language
+		dataType: string
+		lineageTag: 9a3ff802-87d3-42f5-8b67-28e19f93ecd4
+		summarizeBy: none
+		sourceColumn: language
+
+		annotation SummarizationSetBy = Automatic
+
+	column orig_term_data
+		dataType: string
+		lineageTag: 6b4ac399-d9be-493e-83f9-9ef3e8f96681
+		summarizeBy: none
+		sourceColumn: orig_term_data
+
+		annotation SummarizationSetBy = Automatic
+
+	column translation
+		dataType: string
+		lineageTag: 0591cea2-838c-4270-aaeb-679832734121
+		summarizeBy: none
+		sourceColumn: translation
+
+		annotation SummarizationSetBy = Automatic
+
+	column dimension_label
+		dataType: string
+		lineageTag: 4cb445c3-c65a-4f73-8048-58204a4fb038
+		summarizeBy: none
+		sourceColumn: dimension_label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition translations = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/t4d-gmbh/powerbi-example-surfspots/main/data/translations.csv"),[Delimiter=";", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"dimension", type text}, {"language", type text}, {"orig_term_data", type text}, {"translation", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
