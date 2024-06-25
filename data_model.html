@@ -1,0 +1,594 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data model &#8212; Power BI example with surf spots in Portugal 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'data_model';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The report" href="the_report.html" />
+    <link rel="prev" title="Key concepts" href="key_concepts.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Power BI example with surf spots in Portugal 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key concepts</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="the_report.html">The report</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/t4d-gmbh/powerbi-example-surfspots" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/t4d-gmbh/powerbi-example-surfspots/edit/main/doc/data_model.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/data_model.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data model</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Content </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-files">Data files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tables">Tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principais-spots-de-surf">principais_spots_de_surf</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#languages">languages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimension">dimension</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimension-filter">dimension_filter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#translations">translations</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="data-model">
+<h1>Data model<a class="headerlink" href="#data-model" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>The data model has seven tables. The tables <em>titles</em> and <em>measure</em> are already discussed in the chapter <strong>Key concepts</strong>.
+The table <em>languages</em> contains a list of the three languages <em>English</em> (en), <em>Deutsch</em> (de) and <em>Português</em> (pt) from which the user
+can choose the preferred language. The small arrows along the lines indicate that <em>titles</em>, <em>measure</em> and <em>dimension</em> and <em>dimension_filter</em> (including translations)
+are filtered to the selected language.
+Further information about relationships you find in the article <em>Model relationships in Power BI Desktop</em>.<label for='sidenote-role-1' class='margin-toggle'><span id="id1">
+<sup>1</sup></span>
+
+</label><input type='checkbox' id='sidenote-role-1' name='sidenote-role-1' class='margin-toggle'><span class="sidenote"><sup>1</sup><a class="reference external" href="https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-relationships-understand">Model relationships in Power BI Desktop (learn.microsoft.com)</a></span></p>
+<p><img alt="Data model" src="_images/data-model.png" /></p>
+</section>
+<section id="data-files">
+<h2>Data files<a class="headerlink" href="#data-files" title="Link to this heading">#</a></h2>
+<p>You can find all data files in the <em>data</em> directory of the GitHub repository.<label for='sidenote-role-2' class='margin-toggle'><span id="id2">
+<sup>2</sup></span>
+
+</label><input type='checkbox' id='sidenote-role-2' name='sidenote-role-2' class='margin-toggle'><span class="sidenote"><sup>2</sup><a class="reference external" href="https://github.com/t4d-gmbh/powerbi-example-surfspots/tree/main/data">github.com/t4d-gmbh/powerbi-example-surfspots</a></span></p>
+</section>
+<section id="tables">
+<h2>Tables<a class="headerlink" href="#tables" title="Link to this heading">#</a></h2>
+<section id="principais-spots-de-surf">
+<h3>principais_spots_de_surf<a class="headerlink" href="#principais-spots-de-surf" title="Link to this heading">#</a></h3>
+<p>The imported CSV file from dados.gov.pt.
+Since latitude and longitude are stored in one field (separated by a semicolon), they are extracted in two calculated columns.
+In addition, we create a calculated column that indicates whether a website is available or not.
+Since the language of the data set is Portuguese, we use Portuguese terms and translate them later on.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Lat = CONVERT(
+    SUBSTITUTE(TRIM(MID([LatLong], 1, FIND(&quot;;&quot;, [LatLong])-1)), &quot;,&quot;, &quot;.&quot;), 
+    DOUBLE
+)
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Long = CONVERT(
+    SUBSTITUTE(TRIM(MID([LatLong], FIND(&quot;;&quot;, [LatLong])+1,10)), &quot;,&quot;, &quot;.&quot;), 
+    DOUBLE
+)
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Website_available = IF(
+    CONTAINSSTRING(&#39;pincipais_spots_de_surf&#39;[Website], &quot;http&quot;), 
+    &quot;Sim&quot;, 
+    &quot;Não&quot;
+)
+</pre></div>
+</div>
+</section>
+<section id="languages">
+<h3>languages<a class="headerlink" href="#languages" title="Link to this heading">#</a></h3>
+<p>This report is available in three languages:</p>
+<p><img alt="Table languages" src="_images/table-languages.png" /></p>
+<p>If a new language is added, a translation must also be added for each measure and each title (tables <em>measure</em> and <em>titles</em>).
+If translations are not yet available for each measure or title, use one of the existing languages provisionally.</p>
+</section>
+<section id="dimension">
+<h3>dimension<a class="headerlink" href="#dimension" title="Link to this heading">#</a></h3>
+<p>This is a calculated table. It unpivots the columns <em>OBJECTID</em>, <em>LimitePROT</em> (region), <em>Distrito</em> and <em>Website_available</em> of
+the table <em>principais_spots_de_surf</em> to the columns <em>OBJECTID</em>, <em>dimension</em> and <em>label</em>.
+For each language in the table <em>languages</em> a row per <em>OBJECTID</em> and <em>dimension</em> is created.
+If a translation is available in the table <em>translations</em>, it is used for the <em>label</em> and the <em>dimension_label</em>.
+If no translation is available, the original language from the data is used (Portuguese).</p>
+<span class="sidenote"><sup>3</sup><a class="reference external" href="https://support.microsoft.com/en-au/office/unpivot-columns-power-query-0f7bad4b-9ea1-49c1-9d95-f588221c7098">Unpivot columns (Power Query)</a></span><span class="sidenote"><sup>4</sup><a class="reference external" href="https://learn.microsoft.com/en-us/power-bi/create-reports/power-bi-field-parameters">Let report readers use field parameters to change visuals (learn.microsoft.com)</a></span><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These data transformations can also be done in <em>Microsoft Power Query</em><label for='sidenote-role-3' class='margin-toggle'><span id="id3">
+<sup>3</sup></span>
+
+</label><input type='checkbox' id='sidenote-role-3' name='sidenote-role-3' class='margin-toggle'><span class="sidenote d-n"><sup>3</sup><a class="reference external" href="https://support.microsoft.com/en-au/office/unpivot-columns-power-query-0f7bad4b-9ea1-49c1-9d95-f588221c7098">Unpivot columns (Power Query)</a></span> which is a separate software.
+As already mentioned, in this tutorial we focus on Power BI Desktop.</p>
+<p>The idea of this table is to allow users to select a dimension for a visual (for example, the categories on the y-axis in a bar chart).
+This functionality can also be implemented with <em>Field parameters</em>.<label for='sidenote-role-4' class='margin-toggle'><span id="id4">
+<sup>4</sup></span>
+
+</label><input type='checkbox' id='sidenote-role-4' name='sidenote-role-4' class='margin-toggle'><span class="sidenote d-n"><sup>4</sup><a class="reference external" href="https://learn.microsoft.com/en-us/power-bi/create-reports/power-bi-field-parameters">Let report readers use field parameters to change visuals (learn.microsoft.com)</a></span>
+See also the note at the end of this page.</p>
+</div>
+</section>
+<section id="dimension-filter">
+<h3>dimension_filter<a class="headerlink" href="#dimension-filter" title="Link to this heading">#</a></h3>
+<p>We use the table <em>dimension</em> for visualizations.
+For filtering data, we create a second table, a copy of <em>dimension</em>, which gives us more flexibility when creating the report.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dimension_filter = ALL(&#39;dimension&#39;)
+</pre></div>
+</div>
+</section>
+<section id="translations">
+<h3>translations<a class="headerlink" href="#translations" title="Link to this heading">#</a></h3>
+<p>In this table, the original terms from the table <em>principais_spots_de_surf</em> (Portuguese) are translated into other languages.
+The translation is optional. If no translation is available for a term, the Portuguese term is used for all other languages (see table <em>dimension</em>).</p>
+<p><img alt="Table translations" src="_images/table-translations.png" /></p>
+<span class="sidenote"><sup>5</sup><a class="reference external" href="https://learn.microsoft.com/en-us/power-bi/guidance/data-translation-implement-field">Implement data translation using field parameters</a></span><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The translation of data values can also be achieved with the <em>Field parameters</em> feature, which was introduced by Microsoft in 2022.
+A detailed and helpful description can be found in the article <em>Implement data translation using field parameters</em>.<label for='sidenote-role-5' class='margin-toggle'><span id="id5">
+<sup>5</sup></span>
+
+</label><input type='checkbox' id='sidenote-role-5' name='sidenote-role-5' class='margin-toggle'><span class="sidenote d-n"><sup>5</sup><a class="reference external" href="https://learn.microsoft.com/en-us/power-bi/guidance/data-translation-implement-field">Implement data translation using field parameters</a></span></p>
+<p>The approach we use here has the advantage that new languages and translations can be added dynamically
+without changing the structure of the data model.</p>
+<p>However, depending on the use case, the use of <em>Field parameters</em> may be the better solution.
+In our experience, <em>Field parameters</em> offer better performance, which becomes relevant with larger data models (several hundred megabytes).</p>
+</div>
+<hr class="footnotes docutils" />
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="key_concepts.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Key concepts</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="the_report.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The report</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Content
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-files">Data files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tables">Tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principais-spots-de-surf">principais_spots_de_surf</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#languages">languages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimension">dimension</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimension-filter">dimension_filter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#translations">translations</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christian M. Müller
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, T4D GmbH.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
