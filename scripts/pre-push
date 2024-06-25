@@ -35,7 +35,7 @@ else
 	echo >&2 "Seems that noting was changed"
 	exit 0
   else
-    git add *
+    git add pbir/*
     git commit -m "$commit_msg"
 	git stash apply
 	echo >&2 "Check last commit [ git diff HEAD^ HEAD ] and run [ git push ] again if everything is OK."
